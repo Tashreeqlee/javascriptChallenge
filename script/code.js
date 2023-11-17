@@ -1,59 +1,76 @@
  //Answer make sure to answer all of the questions between the questions that follow
-​
 // The following exercise consists of DOM manipulation, variables, conditional statements, loops, arrays and objects Everything you have covered so far.
 // The questions will vary with difficulty and you may be required to combine more than one topic to complete a certain exercise. 
 // ***You will not be allowed to use Youtube solutions if you are unable to explain your solutions that follow. After I check your answer and you cannot explain your code, I will mark it as a strike against your name.
 // AIM: To complete the exercise fully without any assistance as much as possible.
 // REMEMBER:   The feeling for anxiousness and excitement is that of a fine line...Physiologically they are almost identical. 
 //             The feeling you're feeling is excitement not nervousness. I know you got this! I believe in you even if you don't believe in yourself!:)
-​
-​
 // 1. Use the following id="heading" to change the heading(This is the main heading) of the html to 'Javascript', DO NOT USE QUERY SELECTOR
-​
+
 document.getElementById('heading').innerText = 'JavaScript';
-
-
 // 2. Use the class='paragraph' and change the information to 'This is a language I have mastered and I am proud of myself. I complished this because I believed in myself'
-​
+
+document.getElementsByClassName('paragraph')[0].innerText = 'This is a language I have mastered and I am proud of myself. I complished this because I believed in myself';
 // 3. Use the h3 element and change the heading(Subheading) to 'Things I've accomplished so far'. Hint: use querySelector
-​
+
+document.querySelector('h3').innerText = "Things I've accomplished so far";
 // 4. Change the paragraph below Question3(above) to 'I have discovered that I can accomplish anything I put my mind to'Hint: Use querySelectorAll and index or use getElementByTagName and index
-​
+
+document.querySelectorAll('p')[2].innerText = 'I have discovered that I can accomplish anything I put my mind to';
+
 // So far you have hints, however the hints have lessened.
 // 5.1. Attach the first input to a variable
+const firstInput = document.getElementsByTagName('input')[0];
 // 5.2. Attach the second input to a variable
+const secondInput = document.getElementsByTagName('input')[1];
 // 5.3. Attach the FIRST button to a variable(going to add an eventListener to button)
+const firstButton = document.getElementsByTagName('button')[0];
 // 5.4. Attach the FIRST span element to a variable(To display the information to)
-//         P.S. for the next step make use of console.log() to keep track of where data is going  
+//         P.S. for the next step make use of console.log() to keep track of where data is going 
+const firstSpan = document.getElementsByTagName('span')[0];
+console.log()
+
+
 // 5.5. Create a normal function that allows us to multiply the 2 inputs together and writes the information to the FIRST span element.
+function multiplyInputs() {
+    const result = parseInt(firstInput.value) * parseInt(secondInput.value);
+    firstSpan.innerText = result;
+}  
 // 5.6. Add an event listener to the button that runs the function that tyou created
+firstButton.addEventListener('click', multiplyInputs);
 // 5.7 Hmm......Did you forget to make your input tags return a value instead of the element? (0.0)
 //     Or did you forget we are writing to an element not an input?....which means your answer will be displayed with innerText
-​
 // Okay, that was pretty awesome...not too bad when you have the steps?
-​
 // 6. Now you will have to return the calculation of the 2 numbers from the modulus input for eg.......4....%....2....= 0
 // 6.1 Set the first modulus input to a variable 
+const firstModulusInput = document.getElementsByTagName('input')[2];
 // 6.2 Set the send modulud input to a variable
+const secondModulusInput = document.getElementsByTagName('input')[3];
 // 6.3 Set the SECOND span to a varable(will display answer)
+const secondSpan = document.getElementsByTagName('span')[1];
 // 6.4 Set the SECOND button to a variable(to run event listener)
+const secondButton = document.getElementsByTagName('button')[1];
 // 6.5 Create a normal function to calculate the modulus of the inputs
+function calculateModulus() {
+    const result = parseInt(firstModulusInput.value) % parseInt(secondModulusInput.value);
+    secondSpan.innerText = result;
+}
 // 6.6 Add an event listener to the button which will run the function you created
-​
+secondButton.addEventListener('click', calculateModulus);
 // Hmmm......That wasn't too bad....I knew you could do it! I believe in you.
 // You should now have an idea of the steps neccesary to complete actions using DOM manipulation.
-​
 // Okay now that you are aware of the steps needed, try no 7
 // 7.1 Change the text of 'Bubble Tea' to 'White Tea'
+document.getElementById('bubble-tea').innerText = 'White Tea';
 // 7.2 Change the text of 'Green Tea' to 'Black tea'
+document.getElementById('green-tea').innerText = 'Black Tea';
 // 7.3 Change the text of 'Iced Tea' to 'Herbal Tea'
-​
+document.getElementById('iced-tea').innerText = 'Herbal Tea';
 // You're eating Javascript, and again....I'm proud of you!
-​
 // 8. Declare a variable called lastName and add a value to it(value must be a string)
+const lastName = 'Lee';
 // 9. Declare a variable called parentsAge and give it a value of 20(value must be a number)
 // 10. Create an array with called coolCars and give it the following value: ['BMW','Bugati','Ferrari','McLaren', 'Mercedes']
-​
 //             Now to manipulate the arrays. ;)
 // 11. Write the code to change the 'McLaren' value to 'Lamborghini' in the array Hint: use indexing to access different values in arrays
 // 12. Use a for loop to loop through the array, and console.log every value inside of the array.
@@ -61,7 +78,6 @@ document.getElementById('heading').innerText = 'JavaScript';
 // 14. Write the code to remove the last item in the array(coolCars not the reversed array) and store it in a variable....which means your array of coolCars must look like : ['BMW','Bugati','Ferrari','Lamborghini]
 // 15. Now write the code to use the variable you made in no.14 and add it to the FRONT of the array. Your coolCars array should now look like:
 // [ 'Mercedes', 'BMW', 'Bugati', 'Ferrari', 'Lamborghini']
-​
 //             Time to SWITCH it up a bit
 // 16. Write a simple conditional statement that will check if someone is younger than 18 or older than 18. The variable will be called age = 18 then a=17 to check
 // 17. Make use of a switch statement and create a possible soultion for no.16
@@ -81,7 +97,6 @@ document.getElementById('heading').innerText = 'JavaScript';
 //         to the chair object.
 // 23.1.   What code will I write to view the value of the armRestBars.
 // 23.2    What code can I use to delete the property of legs with the value of 4.
-​
 // 24. Create an factory function that can be used to return objects of electrical devices.
 //         the factory function should include the properties of 
 //         name,
@@ -95,7 +110,6 @@ document.getElementById('heading').innerText = 'JavaScript';
 //         this.year,
 //         this.transmission,
 //         this.drivetrains
-​
 // 26. Create 4 objects of your own and print to the console all of the created objects.
 // 27. After, push the 4 objects to an array called 'informationAboutCars'.
 // 28. Create a function that can be used 'globally', the function should return a sentence containing all the properties used inside the object, eg 'The car brand Ford has a model of a Figo that was produced in 2019. It is a manual and is a front wheel drive'
